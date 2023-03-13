@@ -3,60 +3,13 @@ import reactLogo from "./assets/react.svg";
 import "./assets/styles/main.scss";
 
 import { createRoot } from "react-dom/client";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Canvas } from "@react-three/fiber";
 
-import { ObjectLoader } from "three";
+import { OrbitControls, Loader } from "@react-three/drei";
 
-import { OrbitControls, Loader, useFBX } from "@react-three/drei";
-
-function Can(props) {
-	const ref = useRef();
-
-	const object = useLoader(ObjectLoader, "/model.json");
-
-	const [hovered, hover] = useState(false);
-
-	const meshNodes = [];
-	object.traverse((node) => {
-		if (node.isMesh) {
-			meshNodes.push(node);
-		}
-	});
-
-	if (hovered) {
-		meshNodes.forEach((meshNode) => {
-			meshNode.material.color.set("hotpink");
-		});
-	} else {
-		meshNodes.forEach((meshNode) => {
-			meshNode.material.color.set("orange");
-		});
-	}
-
-	useEffect(() => {
-		console.log(hovered);
-	}, [hovered]);
-
-	useEffect(() => {
-		console.log(object);
-	}, [object]);
-
-	return (
-		<primitive
-			{...props}
-			ref={ref}
-			scale={0.3}
-			onPointerOver={(event) => hover(true)}
-			onPointerOut={(event) => hover(false)}
-			onClick={(event) => console.log(event)}
-			object={object}
-		>
-		</primitive>
-	);
-}
+import Can from "./components/can";
+import Banner from "./components/banner";
 
 function App() {
 	return (
@@ -65,7 +18,8 @@ function App() {
 				<ambientLight intensity={0.3} />
 				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={2} />
 				<pointLight position={[-10, -10, -10]} />
-				<Can position={[0, 0, 0]} />
+				<Can position={[0, -1.6, 0]} />
+        <Banner position={[0, 0, 0]} />
 				<OrbitControls />
 			</Canvas>
 			<Loader />
