@@ -9,7 +9,7 @@ function Arc(props) {
 			{...props}
 			onPointerOver={(event) => hover(true)}
 			onPointerOut={(event) => hover(false)}
-			onClick={(event) => click(!clicked)}
+			onClick={(event) => props.setBackground(props.arcThetaStartIndex + 1)}
 		>
 			<cylinderGeometry
 				args={[
@@ -41,7 +41,6 @@ export default function Banner(props) {
 			// 	onPointerOut={() => setColor("hotpink")}
 		>
 			{Array.from(Array(3).keys()).map((i) => {
-				console.log(i);
 				return (
 					<Arc
                         key={i}
@@ -51,6 +50,7 @@ export default function Banner(props) {
 						arcOpenEnded={true}
 						arcTotalDivisions={3}
 						arcThetaStartIndex={i}
+						setBackground={props.setBackground}
 					/>
 				);
 			})}

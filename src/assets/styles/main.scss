@@ -1,4 +1,5 @@
 @import "./static/colors.scss";
+@import "./components/main.scss";
 
 * {
 	box-sizing: border-box;
@@ -15,4 +16,14 @@ body,
 
 body {
 	background: $background;
+}
+
+.main-container{
+	display: flex;
+	// flex-direction: column;
+	// align-items: center;
+	// justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
 }

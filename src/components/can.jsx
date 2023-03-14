@@ -45,7 +45,7 @@ export default function Can(props) {
 			scale={0.3}
 			// onPointerOver={(event) => hover(true)}
 			// onPointerOut={(event) => hover(false)}
-			// onClick={(event) => console.log(event)}
+			// onClick={(event) => props.setBackground(0)}
 			object={object}
 		></primitive>
 	);

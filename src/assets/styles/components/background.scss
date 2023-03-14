@@ -1,0 +1,17 @@
+@import "../static/colors.scss";
+
+// div in back of everything, full width and height
+.background-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    // background: black;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
