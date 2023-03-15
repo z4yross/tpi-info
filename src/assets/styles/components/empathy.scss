@@ -2,4 +2,27 @@
     background-color: rgb(133, 50, 91);
     height: 100%;
     width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    grid-gap: 0.2rem;
+    padding: 0.2rem;
+    
+}
+
+.section-empathymap-container{
+    // background-color: #000;
+    height: 100%;
+    width: 100%;
+
+    &:hover{
+        background-color: #000;
+    }
+}
+
+.double{
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
