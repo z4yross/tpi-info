@@ -5,7 +5,7 @@ import { ObjectLoader, MeshStandardMaterial } from "three";
 export default function Can(props) {
 	const ref = useRef();
 
-	const object = useLoader(ObjectLoader, "/model.json");
+	const object = useLoader(ObjectLoader, "../assets/model.json");
 
 	const [hovered, hover] = useState(false);
 
