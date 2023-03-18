@@ -6,7 +6,9 @@ import { createRoot } from "react-dom/client";
 
 import { Canvas } from "@react-three/fiber";
 
-import { OrbitControls, Loader } from "@react-three/drei";
+import { ScrollControls, OrbitControls, Loader } from "@react-three/drei";
+
+// import { ScrollControls, Sky, useScroll, useGLTF, useAnimations } from '@react-three/drei'
 
 import Can from "./components/can";
 import Banner from "./components/banner";
@@ -23,9 +25,12 @@ function App() {
 				<ambientLight intensity={0.3} />
 				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={2} />
 				<pointLight position={[-10, -10, -10]} />
-				<Can position={[0, -1.6, 0]} setBackground={setBackground} />
-				<Banner position={[0, 0, 0]} setBackground={setBackground} />
-				<OrbitControls />
+				<ScrollControls infinite horizontal pages={3} distance={1}>
+					<Can position={[0, -1.6, 0]} setBackground={setBackground} />
+					<Banner position={[0, 0, 0]} setBackground={setBackground} />
+				</ScrollControls>
+				
+				
 			</Canvas>
 			<Loader />
 		</div>

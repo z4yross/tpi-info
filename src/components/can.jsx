@@ -1,6 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useLoader } from "@react-three/fiber";
+import { useLoader, useFrame } from "@react-three/fiber";
 import { ObjectLoader, MeshStandardMaterial } from "three";
+
+// import { OrbitControls } from "@react-three/drei";
+
+import { useScroll } from '@react-three/drei'
 
 export default function Can(props) {
 	const ref = useRef();
@@ -31,22 +35,25 @@ export default function Can(props) {
 	}
 
 	// useEffect(() => {
-	// 	console.log(hovered);
-	// }, [hovered]);
+	// 	console.log(scroll.offset);
+	// }, [scroll.offset]);
 
 	// useEffect(() => {
 	// 	console.log(object);
 	// }, [object]);
 
 	return (
-		<primitive
-			{...props}
-			ref={ref}
-			scale={0.3}
-			// onPointerOver={(event) => hover(true)}
-			// onPointerOut={(event) => hover(false)}
-			// onClick={(event) => props.setBackground(0)}
-			object={object}
-		></primitive>
+		<>
+			<primitive
+				{...props}
+				ref={ref}
+				scale={0.3}
+				// onPointerOver={(event) => hover(true)}
+				// onPointerOut={(event) => hover(false)}
+				// onClick={(event) => props.setBackground(0)}
+				object={object}
+			></primitive>
+			{/* <OrbitControls /> */}
+		</>
 	);
 }
