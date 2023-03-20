@@ -1,0 +1,187 @@
+$small-text: 2em;
+$big-text: 5.2em;
+
+$shadow-x: 3px;
+$shadow-y: 3px;
+$shadow-o: 2px;
+$shadow-c: rgba(0, 0, 0, 0.5);
+
+.menu-container {
+	width: 370px;
+	height: 350px;
+
+	white-space: nowrap;
+	display: grid;
+
+	grid-template-columns: 1fr 4fr 4fr 1fr;
+	grid-template-rows: 128px 25px 58px 55px 0;
+	grid-template-areas:
+		"why why why why"
+		"the the the the"
+		"beer beer beer beer"
+		"in young young young";
+
+	justify-items: stretch;
+	align-items: end;
+}
+
+.interrongation{
+    position: absolute;
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+
+    opacity: 0.5;
+    z-index: -5;
+
+    span{
+        font-family: "Tilt Warp";
+        font-size: 9.1em;
+        line-height: 0.78em;
+    }
+}
+
+.i-left{
+    top: 0px;
+    left: -72px;
+}
+
+.i-right{
+    bottom: 84px;
+    right: -73px;
+}
+
+.menu-item {
+	font-family: "Tilt Warp";
+	font-size: 2em;
+	color: $secondary;
+	line-height: 0.75em;
+
+	width: fit-content;
+}
+
+.why-container {
+	grid-area: why;
+	justify-content: center;
+	align-items: center;
+	line-height: 0.75em;
+
+	display: grid;
+
+	grid-template-columns: 4fr 1fr;
+	grid-template-rows: 70px 58px;
+	grid-template-areas:
+		"why why why has"
+		"diminished diminished diminished diminished";
+
+	justify-items: stretch;
+	align-items: end;
+
+	cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+		// #why {
+		// 	color: $accent;
+		// }
+
+		// #diminished {
+		// 	color: $secondary;
+		// }
+
+		scale: 1.05;
+        text-shadow: $shadow-x $shadow-y $shadow-o $shadow-c;
+	}
+}
+
+#why {
+	font-size: $big-text + 0.3em;
+	opacity: 1;
+	z-index: 1;
+	line-height: 0.75em;
+	z-index: 1;
+}
+
+#has {
+	grid-area: has;
+    opacity: 0.75;
+}
+
+#diminished {
+	grid-area: diminished;
+	font-size: $big-text - 0.3em;
+	color: $accent;
+	opacity: 1;
+	z-index: 0;
+	line-height: 0.75em;
+	letter-spacing: -0.055em;
+	padding-left: 0;
+	padding-right: 0;
+	z-index: 0;
+}
+
+#the {
+	grid-area: the;
+	letter-spacing: 0.4em;
+}
+
+#beer {
+	grid-area: beer;
+	font-size: $big-text + 0.6em;
+	color: $accent;
+	opacity: 1;
+	line-height: 0.5em;
+	letter-spacing: 0.06em;
+	align-self: start;
+	z-index: 0;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        scale: 1.05;
+        text-shadow: $shadow-x $shadow-y $shadow-o $shadow-c;
+        z-index: 10;
+    }
+}
+
+#in {
+	grid-area: in;
+    opacity: 0.75;
+}
+
+#young {
+	grid-area: young;
+	font-size: $big-text + 0.3;
+	opacity: 1;
+	line-height: 0.75em;
+	justify-self: end;
+	align-self: end;
+	z-index: 1;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        // color: $accent;
+        scale: 1.05;
+        text-shadow: $shadow-x $shadow-y $shadow-o $shadow-c;
+    }
+}
+
+.noactive {
+    opacity: 0.5 !important;
+    filter: grayscale(100%);
+}
+
+// .selected {
+//     opacity: 1 !important;
+//     // filter: grayscale(0%);
+// }
+
+.navigation {
+    .menu-item {
+        color: $secondary !important;
+    }
+}

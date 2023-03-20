@@ -1,38 +1,42 @@
 import React, { useRef, useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
 import "./assets/styles/main.scss";
 
-import { createRoot } from "react-dom/client";
+import Index from "./components/index/main";
+import Pestal from "./components/pestal/main";
+import EmpathyMap from "./components/empatymap/main";
+import ProblemTree from "./components/problemtree/main";
 
-import { Canvas } from "@react-three/fiber";
+import Menu from "./components/menu/main";
 
-import { ScrollControls, OrbitControls, Loader } from "@react-three/drei";
+import "animate.css";
 
-// import { ScrollControls, Sky, useScroll, useGLTF, useAnimations } from '@react-three/drei'
-
-import Can from "./components/can";
-import Banner from "./components/banner";
-import Background from "./components/background";
+import empBg from "./assets/images/emp-bg.jpg";
 
 function App() {
-
 	const [background, setBackground] = useState(0);
+
+	const current = [<Pestal />, <ProblemTree />, <EmpathyMap bg={empBg}/>];
+
+	const [isActive, setIsActive] = useState(false);
+	const [section, setSection] = useState(0);
 
 	return (
 		<div className="main-container">
-			<Background background={background} />
-			<Canvas>
-				<ambientLight intensity={0.3} />
-				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={2} />
-				<pointLight position={[-10, -10, -10]} />
-				<ScrollControls infinite horizontal pages={3} distance={1}>
-					<Can position={[0, -1.6, 0]} setBackground={setBackground} />
-					<Banner position={[0, 0, 0]} setBackground={setBackground} />
-				</ScrollControls>
-				
-				
-			</Canvas>
-			<Loader />
+			<div
+				className={`menu-wrapper${isActive ? " active-mn" : ""} smooth`}
+			>
+				<Menu
+					isActive={isActive}
+					setIsActive={setIsActive}
+					section={section}
+					setSection={setSection}
+				/>
+			</div>
+			<div
+				className={`section-wrapper${isActive ? " active" : ""} smooth`}
+			>
+				{current[section]}
+			</div>
 		</div>
 	);
 }
