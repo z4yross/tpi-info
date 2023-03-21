@@ -1,8 +1,7 @@
 .empathymap-container {
 	background-image: url(/tpi-info/images/emp-bg.jpg);
-    background-size: cover;
-    background-position: center;
-
+	background-size: cover;
+	background-position: center;
 
 	// background-color: rgb(133, 50, 91);
 	height: 100%;
@@ -24,55 +23,104 @@
 	// position:relative;
 	// right: 0;
 
-    position: relative;
+	position: relative;
 }
 
 .emp-grid {
-	
-    // backdrop-filter: blur(5px);
+	// backdrop-filter: blur(5px);
 	width: 100%;
 	height: 100%;
 
-    display: grid;
+	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 
-    grid-gap: 0.5rem;
-    padding: 0.5rem;
+	grid-gap: 0.5rem;
+	padding: 0.5rem;
 }
 
 .section-empathymap-container {
 	// background-color: #000;
 	height: 100%;
 	width: 100%;
-    backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 
-    font-family: 'Tilt Warp';
+	font-family: "Tilt Warp";
 
 	&:hover {
 		// background-color: #000;
-        
-        background-color: rgba($background, 0.5);
+
+		background-color: rgba($background, 0.5);
 	}
 }
 
 .deactivated-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	height: 100%;
 
-    height: 100%;
+	background-color: rgba(#000, 0.2);
 
-    background-color: rgba(#000, 0.2);
-
-    .title-card{
-        color: $secondary;
-        font-size: 5em;
-        // background-color: rgba($background, 0.5);
-    }
+	.title-card {
+		color: $secondary;
+		font-size: 5em;
+		// background-color: rgba($background, 0.5);
+	}
 }
+
+.activated-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+
+	background-color: rgba($secondary, 0.8);
+
+	padding: 1rem;
+
+	.title-card {
+		
+		font-size: 5em;
+		// background-color: rgba($background, 0.5);
+	}
+	
+	color: #000;
+
+	.content-card {
+	
+		font-size: 1.5em;
+		color: #000;
+
+		blockquote {
+			color: $secondary;
+			color: $secondary;
+			background: $background;
+			border-left: 10px solid $accent;
+			margin: 1.5em 10px;
+			padding: 0.5em 10px;
+			quotes: "\201C""\201D""\2018""\2019";
+		}
+
+		blockquote:before {
+			color: $secondary;
+			content: "\201C";
+			font-size: 4em;
+			line-height: 0.1em;
+			margin-right: 0.15em;
+			vertical-align: -0.4em;
+		}
+
+		blockquote p {
+			display: inline;
+		}
+	}
+}
+
 // .empathymap-bg {
 // 	// position: relative;
 
