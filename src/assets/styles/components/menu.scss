@@ -3,18 +3,18 @@ $big-text: 5.2em;
 
 $shadow-x: 3px;
 $shadow-y: 3px;
-$shadow-o: 2px;
+$shadow-o: 0px;
 $shadow-c: rgba(0, 0, 0, 0.5);
 
 .menu-container {
 	width: 370px;
-	height: 350px;
+	height: 370px;
 
 	white-space: nowrap;
 	display: grid;
 
 	grid-template-columns: 1fr 4fr 4fr 1fr;
-	grid-template-rows: 128px 25px 58px 55px 0;
+	grid-template-rows: 128px 25px 75px 60px 0;
 	grid-template-areas:
 		"why why why why"
 		"the the the the"
@@ -43,12 +43,12 @@ $shadow-c: rgba(0, 0, 0, 0.5);
 }
 
 .i-left{
-    top: 0px;
-    left: -72px;
+    top: -13px;
+    left: -75px;
 }
 
 .i-right{
-    bottom: 84px;
+    bottom: 80px;
     right: -73px;
 }
 
@@ -126,6 +126,32 @@ $shadow-c: rgba(0, 0, 0, 0.5);
 	letter-spacing: 0.4em;
 }
 
+.beer-container{
+	grid-area: beer;
+	justify-content: center;
+	align-items: center;
+	line-height: 0.75em;
+
+	margin: 0;
+
+	display: grid;
+
+	grid-template-columns: 4fr 1fr;
+	grid-template-rows: 55px 25px 0;
+	grid-template-areas:
+		"beer beer beer beer"
+		"traditional traditional traditional traditional";
+
+	cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+	&:hover {
+		scale: 1.05;
+        text-shadow: $shadow-x $shadow-y $shadow-o $shadow-c;
+        z-index: 10;
+    }
+}
+
 #beer {
 	grid-area: beer;
 	font-size: $big-text + 0.6em;
@@ -137,13 +163,18 @@ $shadow-c: rgba(0, 0, 0, 0.5);
 	z-index: 0;
 
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    // transition: all 0.2s ease-in-out;
+}
 
-    &:hover {
-        scale: 1.05;
-        text-shadow: $shadow-x $shadow-y $shadow-o $shadow-c;
-        z-index: 10;
-    }
+#traditional{
+	grid-area: traditional;
+	// font-size: $ + 0.3em;
+	opacity: 1;
+	line-height: 0.75em;
+	z-index: 1;
+	// transition: all 0.2s ease-in-out;
+	letter-spacing: 0.62em;
+	margin-left: 0.1em;
 }
 
 #in {
@@ -159,6 +190,8 @@ $shadow-c: rgba(0, 0, 0, 0.5);
 	justify-self: end;
 	align-self: end;
 	z-index: 1;
+
+	// color: $accent;
 
     cursor: pointer;
     transition: all 0.2s ease-in-out;

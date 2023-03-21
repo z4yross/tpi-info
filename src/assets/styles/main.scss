@@ -23,6 +23,8 @@ body,
 
 body {
 	background: $background;
+	background: rgb(243,160,65);
+	background: linear-gradient(140deg, rgba(243,160,65,1) 26%, rgba(223,119,0,1) 100%);
 }
 
 .main-container{

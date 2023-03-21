@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import Section from "./section/section.jsx";
 
+import { TEXTS } from "../../assets/strings/emp.js";
+
 export default function EmpathyMap(props) {
 	const sections = [
 		"ven",
@@ -16,7 +18,7 @@ export default function EmpathyMap(props) {
 		<div className="empathymap-container">
 			<div className="emp-grid">
 				{sections.map((section, index) => {
-					return <Section key={index} section={section} />;
+					return <Section key={index} section={section} string={TEXTS[section]}/>;
 				})}
 			</div>
 			{/* <div className="emp-title">

@@ -15,10 +15,11 @@ import empBg from "./assets/images/emp-bg.jpg";
 function App() {
 	const [background, setBackground] = useState(0);
 
-	const current = [<Pestal />, <ProblemTree />, <EmpathyMap bg={empBg}/>];
+	const current = [<ProblemTree />, <Pestal />, <EmpathyMap bg={empBg}/>];
 
 	const [isActive, setIsActive] = useState(false);
 	const [section, setSection] = useState(0);
+
 
 	return (
 		<div className="main-container">
@@ -35,7 +36,9 @@ function App() {
 			<div
 				className={`section-wrapper${isActive ? " active" : ""} smooth`}
 			>
-				{current[section]}
+				{section === 0 && <ProblemTree />}
+				{section === 1 && <Pestal />}
+				{section === 2 && <EmpathyMap bg={empBg} />}
 			</div>
 		</div>
 	);

@@ -4,11 +4,11 @@ export default function Index(props) {
 	const handleClick = (e) => {
 		if (props.section === e) {
 			props.setIsActive(!props.isActive);
-            return;
+			return;
 		}
-        
-        if(props.isActive === false) props.setIsActive(true);
-        props.setSection(e);
+
+		if (props.isActive === false) props.setIsActive(true);
+		props.setSection(e);
 		// props.setIsActive(!props.isActive);
 	};
 
@@ -43,17 +43,21 @@ export default function Index(props) {
 				el consumo de
 			</span>{" "}
 			<br />
-			<span
-				className={`menu-item  ${
+			<div
+				className={`beer-container ${
 					props.section !== 1 && props.isActive ? "noactive" : ""
-				}
-                animate__animated animate__pulse animate__delay-1s animate__fast`}
+				} animate__animated animate__pulse animate__delay-1s`}
 				onClick={() => handleClick(1)}
-				id="beer"
 			>
-				cerveza
-			</span>{" "}
-			<br />
+				<span className="menu-item" id="beer">
+					cerveza
+				</span>{" "}
+				<br />
+				<span className="menu-item" id="traditional">
+					tradicional
+				</span>{" "}
+				<br />
+			</div>
 			<span
 				className={`menu-item ${props.isActive ? "noactive" : ""}`}
 				id="in"

@@ -29,19 +29,20 @@ export default function Section(props) {
 						<div className="separator"></div>
 						<div className="items">
 							<ul>
-								<li>Item 1</li>
-								<li>Item 2</li>
-								<li>Item 3</li>
-								<li>Item 4</li>
-								<li>Item 5</li>
+								{props.string.list.map((item, index) => {
+									return (
+										<li key={index}>
+											{item}
+										</li>
+									);
+								})}
 							</ul>
 						</div>
 						<div className="separator"></div>
 						<div clasName="quote">
 							<blockquote>
 								<p>
-									Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Quisquam, quod.
+									{props.string.quote}
 								</p>
 							</blockquote>
 						</div>
