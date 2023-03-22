@@ -14,7 +14,6 @@ import empBg from "./assets/images/emp-bg.jpg";
 import unal from "./assets/images/logo-unal.png";
 import tpi from "./assets/images/logo-tpi.png";
 
-
 function App() {
 	const [background, setBackground] = useState(0);
 
@@ -22,6 +21,10 @@ function App() {
 
 	const [isActive, setIsActive] = useState(false);
 	const [section, setSection] = useState(2);
+
+	// useEffect(() => {
+	// 	document.style.zoom = "67%"
+	// }, []);
 
 	return (
 		<div className="main-container">
@@ -32,7 +35,7 @@ function App() {
 					className={`logos-wrapper ${
 						isActive ? " active-at" : ""
 					} smooth`}
-				>	
+				>
 					<img src={unal} alt="unal" />
 					<img src={tpi} alt="tpi" />
 				</div>
