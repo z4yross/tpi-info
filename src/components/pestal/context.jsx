@@ -15,32 +15,32 @@ export default function Context() {
 	const pestalData = [
 		{
 			title: "Politico",
-			data: ["Dato 1", "Dato 2"],
+			data: ["Impuestos sobre bebidas alcohólicas.", "Regulación de publicidad de bebidas."],
 			icon: <RiGovernmentFill />,
 		},
 		{
 			title: "Economico",
-			data: ["Dato 1", "Dato 2"],
+			data: ["Desaceleración económica o recesión.", "Cambios en los hábitos de consumo."],
 			icon: <RiCoinsFill />,
 		},
 		{
 			title: "Social",
-			data: ["Dato 1", "Dato 2"],
+			data: ["Cambios en las preferencias de bebidas alcohólicas.", "Cambio en la cultura del consumo de alcohol."],
 			icon: <RiTeamFill />,
 		},
 		{
 			title: "Tecnologico",
-			data: ["Dato 1", "Dato 2"],
+			data: ["Redes sociales impactan consumo", "Innovación en producción y diseño"],
 			icon: <RiHammerFill />,
 		},
 		{
 			title: "Ambiental",
-			data: ["Dato 1", "Dato 2"],
+			data: ["Sostenibilidad y medio ambiente.", "Preferencia por marcas sostenibles."],
 			icon: <RiLeafFill />,
 		},
 		{
 			title: "Legal",
-			data: ["Dato 1", "Dato 2"],
+			data: ["Decreto 1686 - Clasificación de bebidas alcohólicas", "Decreto 1826 - Requisitos legales para su elaboración y comercialización."],
 			icon: <RiBriefcase4Fill />,
 		},
 	];
@@ -57,11 +57,11 @@ export default function Context() {
 				<div className="context-content">
 					{pestalData.map((pestalDataC, index) => {
 						return (
-							<div className="pestal-section-container">
+							<div className="pestal-section-container"  key={index}>
 								<div className="pestal-section-data">
 									<p>{pestalDataC.data[0]}</p>
 								</div>
-								<div key={index} className="context-icon">
+								<div className="context-icon">
 									{pestalDataC.icon}
 								</div>
 								<div className="pestal-section-data">

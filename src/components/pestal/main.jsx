@@ -12,7 +12,7 @@ export default function Pestal() {
 			solution: (
 				<p>
 					<span>Crear un nuevo modelo de ventas</span>
-					un nuevo producto, ambos
+					y un nuevo producto, ambos
 					centrados en la experiencia, pues hemos logrado identificar
 					una tendencia juvenil hacia lo nuevo, esta nueva bebida debe
 					tener un sabor que sea atractivo para ellos (esto podría
