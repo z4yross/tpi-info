@@ -13,11 +13,9 @@ export default function Pestal() {
 				<p>
 					<span>Crear un nuevo modelo de ventas</span>
 					y un nuevo producto, ambos
-					centrados en la experiencia, pues hemos logrado identificar
-					una tendencia juvenil hacia lo nuevo, esta nueva bebida debe
-					tener un sabor que sea atractivo para ellos (esto podría
-					conseguirse con sabores añadidos) y también debe ser lo más
-					barata posible, de manera que sea asequible para gran parte
+					centrados en la experiencia, esta nueva bebida debe
+					tener un sabor que sea atractivo y también debe ser lo más
+					economica posible, de manera que sea asequible para gran parte
 					del público objetivo.
 				</p>
 			),
