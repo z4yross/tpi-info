@@ -11,12 +11,11 @@ export default function Pestal() {
 			s_id: "s1",
 			solution: (
 				<p>
-					<span>Crear un nuevo modelo de ventas</span>
-					y un nuevo producto, ambos
-					centrados en la experiencia, esta nueva bebida debe
-					tener un sabor que sea atractivo y también debe ser lo más
-					economica posible, de manera que sea asequible para gran parte
-					del público objetivo.
+					<span>Crear un nuevo modelo de ventas</span>y un nuevo
+					producto, ambos centrados en la experiencia, esta nueva
+					bebida debe tener un sabor que sea atractivo y también debe
+					ser lo más economica posible, de manera que sea asequible
+					para gran parte del público objetivo.
 				</p>
 			),
 		},
