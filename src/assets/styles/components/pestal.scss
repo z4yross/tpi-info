@@ -21,7 +21,7 @@
 	grid-template-areas:
 		"context context s1"
 		"s2 experts experts"
-		"actors actors s3";
+		"actors prevs s3";
 
 	grid-gap: 0.5rem;
 	padding: 0.5rem;
@@ -83,7 +83,7 @@
                 color: $secondary;
 
 				svg {
-					scale: 1.2;
+					scale: 0.8;
                     filter: invert(1);
 				}
 
@@ -95,6 +95,13 @@
                 .pestal-section-data{
                     height: 100%;
                 }
+
+				.pestal-section-data-placeholder{
+					display: none;
+					width: 0px;
+					height: 0px;
+					overflow: hidden;
+				}
 			}
 
             .pestal-section-data{
@@ -154,7 +161,7 @@
 	grid-area: experts !important;
 	
 	.context-icon{
-		height: 90px;
+		height: 60px;
 	}
 
 	svg{
@@ -165,7 +172,14 @@
 	.pestal-section-container{
 		justify-content: center;
 		align-items: center;
-		
+	}
+
+	.pestal-section-data-placeholder{
+		font-size: 1rem !important;
+		text-align: center;
+		transition: none;
+		margin: 0 !important;
+		padding: 0 !important;
 	}
 
 	.pestal-section-data{
@@ -193,6 +207,10 @@
 
 #s3 {
 	grid-area: s3;
+}
+
+.prev-container {
+	grid-area: prevs;
 }
 
 .solution-container {
@@ -227,4 +245,6 @@
 .grid-active {
 	background-color: rgba($secondary, 0.8) !important;
 	color: #000 !important;
+	scale: 1.5 !important;
+	z-index: 100 !important;
 }

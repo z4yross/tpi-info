@@ -7,11 +7,19 @@ export default function Experts() {
 
 	const data = [
 		{
-			data: ["Precio adecuado al presupuesto de los jovenes", ""],
+			data: ["Precio adecuado al presupuesto de los jovenes", "Oscar Ruiz, Golden Gamber"],
 			icon: <AiOutlineRise size={5}/>,
+			author: ["Oscar Ruiz", ""],
+			ocupation: ["Golden Gamber", ""]
 		},
 		{
-			data: ["Preferencia por cervezas artesanales y cocteles", "Encerramiento de los jovenes por la pandemia"],
+			data: ["Preferencia por cervezas artesanales y cocteles", "Diego vargas, BBC Av. Esperanza"],
+			icon: <AiOutlineRise id="down-icon"/>,
+			author: ["Diego vargas", "Alejandra Fuentes"],
+			ocupation: ["BBC Av. Esperanza", "Primates Bar"]
+		},
+		{
+			data: ["Encerramiento de los jovenes por la pandemia", "Alejandra Fuentes, Primates Bar"],
 			icon: <AiOutlineRise id="down-icon"/>,
 		},
 	];
@@ -31,7 +39,7 @@ export default function Experts() {
 							<div
 								className="pestal-section-container"
 								key={index}
-							>
+							>	
 								<div className="pestal-section-data">
 									<p>{dat.data[0]}</p>
 								</div>
