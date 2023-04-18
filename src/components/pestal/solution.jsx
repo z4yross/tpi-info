@@ -12,7 +12,7 @@ export default function Solution(props) {
 			{!active && `SOLUCION ${props.solution.s_id.charAt(1)}`}
 			{active && (
 				<div className={`solution-parraf-container ${active ? "solution-active" : ""}`}>
-					{props.solution.solution}
+					<p>{props.solution.solution}</p>
 				</div>
 			)}
 		</div>

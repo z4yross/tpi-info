@@ -19,9 +19,9 @@
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-areas:
-		"context context s1"
-		"s2 experts experts"
-		"actors prevs s3";
+		"context context prevs"
+		"actors experts experts"
+		"s1 s2 s3";
 
 	grid-gap: 0.5rem;
 	padding: 0.5rem;
@@ -49,25 +49,75 @@
 	}
 }
 
-
 .context-container {
 	grid-area: context;
 
+	.context-content-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		height: 45%;
+		overflow: hidden;
+
+		gap: 0;
+		
+
+		// height: 100%;
+
+		// background-color: rgba($secondary, 1);
+
+		.ods-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+
+			flex: 0 1 100;
+
+			overflow: hidden;
+			width: 100%;
+
+			.ods{
+				background-color: rgba($secondary, 1);
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					height: 100px;
+				}
+			}
+		}
+	}
+
 	.context-content {
+		flex: 1 0 ;
+
 		display: flex;
 		flex-direction: row;
+		height: fit-content;
+		// height: 70%;
 
-		width: 100%;
-		height: 100%;
+		margin: 0;
+
+		width: fit-content;
+		
 
 		justify-content: center;
 		align-items: center;
 
-        // padding: 0 0.5rem;
+		background-color: rgba($secondary, 1);
+
+		// padding: 0 0.5rem;
 
 		.pestal-section-container {
-			// margin: 0.2rem;
-			width: 100%;
+			flex: 1 0.5 350px;
+			overflow: hidden;
+			// width: 300px;
 			height: 100%;
 
 			display: flex;
@@ -75,28 +125,30 @@
 			justify-content: center;
 			align-items: center;
 
-            transition: background-color 0.3s ease;
+			transition: background-color 0.2s ease;
+
+			img {
+				width: 37%;
+				filter: grayscale(1) brightness(0);
+			}
 
 			&:hover {
-                background-color: $background;
+				background-color: $background;
 
-                color: $secondary;
+				color: $secondary;
 
-				svg {
-					scale: 0.8;
-                    filter: invert(1);
+				svg,
+				img {
+					// scale: 0.8;
+					filter: grayscale(1) brightness(0) invert(1);
 				}
 
-                .context-icon::after,
-                .context-icon::before {
-                    background-color: $secondary;
-                }
+				.context-icon::after,
+				.context-icon::before {
+					background-color: $secondary;
+				}
 
-                .pestal-section-data{
-                    height: 100%;
-                }
-
-				.pestal-section-data-placeholder{
+				.pestal-section-data-placeholder {
 					display: none;
 					width: 0px;
 					height: 0px;
@@ -104,26 +156,28 @@
 				}
 			}
 
-            .pestal-section-data{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+			.pestal-section-data {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 
-                height: 0px;
-                overflow: hidden;
+				height: 100%;
+				overflow: hidden;
 				// display:hidden;
 
-                transition: height 0.3s ease;
+				transition: height 0.3s ease;
 
-                font-size: 1.1rem;
+				// font-size: 1.1rem;
 				text-align: center;
-				margin: 0 0.5rem;
+				margin: 0 1rem;
+
+				font-size: 2rem;
 
 				// border-top: 1px sol`id rgba(#000, 0.5);
 
-                // background-color: rgba($background, 0.5);
-            }
+				// background-color: rgba($background, 0.5);
+			}
 
 			.context-icon {
 				display: flex;
@@ -131,14 +185,14 @@
 				justify-content: center;
 				align-items: center;
 				position: relative;
-                width: 100%;
+				width: 100%;
 
-                svg {
-                    width: 100%;
-                    height: 100%;
-                    fill: #000;
-                    transition: scale 0.3s ease;
-                }
+				svg {
+					width: 100%;
+					height: 100%;
+					fill: #000;
+					transition: scale 0.3s ease;
+				}
 
 				&::before,
 				&::after {
@@ -153,49 +207,53 @@
 	}
 }
 
+#down-icon {
+	transform: rotate(90deg);
+}
+
 .actors-container {
 	grid-area: actors;
 }
 
 .experts-container {
 	grid-area: experts !important;
-	
-	.context-icon{
-		height: 60px;
-	}
-
-	svg{
-		transition: scale 0.3s ease;
-		width: 200px !important;
-	}
-
-	.pestal-section-container{
-		justify-content: center;
-		align-items: center;
-	}
-
-	.pestal-section-data-placeholder{
-		font-size: 1rem !important;
-		text-align: center;
-		transition: none;
-		margin: 0 !important;
-		padding: 0 !important;
-	}
-
-	.pestal-section-data{
-		font-size: 1.5rem !important;
-		margin: 0 5rem;
-		// background-color: rgba($accent, 0.5);
-		overflow: hidden;
-		height: 0px;
-		text-align: center;
-	}
-
-	#down-icon{
-		transform: rotate(90deg);
-	}
 }
 
+.prevs-container {
+	grid-area: prevs;
+
+	.prevs-active-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-gap: 0.5rem;
+	}
+
+	.prevs-img-container {
+		width: 500px;
+		height: 500px;
+
+		filter: grayscale(1) brightness(0.4);
+
+		transition: all 0.2s ease;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&:hover {
+			filter: grayscale(0) brightness(1);
+
+			img {
+				transform: scale(1.5);
+			}
+
+			z-index: 1;
+		}
+	}
+}
 
 #s1 {
 	grid-area: s1;
@@ -209,32 +267,42 @@
 	grid-area: s3;
 }
 
-.prev-container {
-	grid-area: prevs;
-}
-
 .solution-container {
-    font-family: "Tilt Warp";
-    // font-size: 1rem !important;
+	font-family: "Tilt Warp";
+	// font-size: 1rem !important;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.solution-parraf-container{
-	margin: 3rem;
+.solution-parraf-container {
 	font-size: 1.1rem !important;
-	span{
-		font-size: 2rem;
-		display: block;
+	background-color: rgba($secondary, 1);
+
+	// height: 70%;
+	width: 80%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	p {
+		margin: 5rem 5rem;
+		font-size: 2rem !important;
+	}
+
+	span {
+		font-size: 3rem;
+		// display: block;
 		// text-align: center;
 		font-family: "Tilt Warp";
 		// background-color: rgba($background, 0.5);
 		// padding: 0.5rem;
-		margin: 0.5rem 0;
-
+		margin-right: 1rem;
+		text-align: center;
 	}
 }
 
@@ -243,8 +311,14 @@
 // }
 
 .grid-active {
-	background-color: rgba($secondary, 0.8) !important;
+	background-color: rgba(0, 0, 0, 0.8) !important;
+	backdrop-filter: blur(5px) !important;
 	color: #000 !important;
-	scale: 1.5 !important;
+	// scale: 1.5 !important;
 	z-index: 100 !important;
+	position: absolute !important;
+	width: 100% !important;
+	height: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
 }

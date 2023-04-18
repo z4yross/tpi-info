@@ -4,6 +4,7 @@ import Solution from "./solution";
 import Context from "./context";
 import Actors from "./actors";
 import Experts from "./experts";
+import Prevs from "./prevs";
 
 export default function Pestal() {
 	const solutions = [
@@ -14,7 +15,7 @@ export default function Pestal() {
 					<span>Crear un nuevo modelo de ventas</span>y un nuevo
 					producto, ambos centrados en la experiencia, esta nueva
 					bebida debe tener un sabor que sea atractivo y también debe
-					ser lo más economica posible, de manera que sea asequible
+					ser lo más económica posible, de manera que sea asequible
 					para gran parte del público objetivo.
 				</p>
 			),
@@ -50,6 +51,7 @@ export default function Pestal() {
 				<Actors />
 				<Solution solution={solutions[2]} />
 				<Experts />
+				<Prevs />
 			</div>
 		</div>
 	);
