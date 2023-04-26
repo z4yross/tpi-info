@@ -12,11 +12,9 @@ export default function Pestal() {
 			s_id: "s1",
 			solution: (
 				<p>
-					<span>Crear un nuevo modelo de ventas</span>y un nuevo
-					producto, ambos centrados en la experiencia, esta nueva
-					bebida debe tener un sabor que sea atractivo y también debe
-					ser lo más económica posible, de manera que sea asequible
-					para gran parte del público objetivo.
+					<span>Códigos QR en etiquetas o tapa</span> dirigirán a
+					usuarios a juegos interactivos, fomentando conversación y
+					aumentando interés en nuestras cervezas.
 				</p>
 			),
 		},
@@ -24,9 +22,9 @@ export default function Pestal() {
 			s_id: "s2",
 			solution: (
 				<p>
-					<span>Producir campañas publicitarias</span>
-					que mejoren la percepción del nombre de las cervezas
-					tradicionales existentes hacia el público objetivo.
+					<span>Códigos QR exclusivos en eventos</span> conectarán a
+					asistentes con actividades y promociones especiales,
+					mejorando la representatividad en el público joven.
 				</p>
 			),
 		},
@@ -34,9 +32,10 @@ export default function Pestal() {
 			s_id: "s3",
 			solution: (
 				<p>
-					<span>Adjuntar la cadena BBC</span> a la venta de cervezas
-					tradicionales para impulsar las ventas en este público (ya
-					que gran parte de este visita estos establecimientos).
+					<span> Redistribución enfocada en cervezas artesanales </span>
+					a nivel nacional, reduciendo costos de producción y
+					transporte, y adaptándonos a las preferencias actuales de
+					los jóvenes.
 				</p>
 			),
 		},

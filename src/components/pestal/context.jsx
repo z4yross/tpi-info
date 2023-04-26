@@ -122,7 +122,7 @@ export default function Context() {
 										{pestalDataC.icon}
 									</div>
 									<div className="pestal-section-data">
-										<p>{pestalDataC.data[0]}</p>
+										<p>{pestalDataC.data[1]}</p>
 									</div>
 								</div>
 							);
